@@ -1,12 +1,25 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [industriesOpen, setIndustriesOpen] = useState(false)
+  const closeTimer = useRef(null)
+
   const close = () => {
     setOpen(false)
     setIndustriesOpen(false)
+  }
+
+  const openIndustries = () => {
+    clearTimeout(closeTimer.current)
+    setIndustriesOpen(true)
+  }
+
+  const closeIndustriesDelayed = () => {
+    closeTimer.current = setTimeout(() => {
+      setIndustriesOpen(false)
+    }, 200) // 200ms delay - cursor move/click ke liye time milta hai
   }
 
   const industries = [
@@ -31,39 +44,43 @@ export default function Header() {
         <nav className="nav-links">
           <NavLink to="/about" onClick={close}>About</NavLink>
           <NavLink to="/services" onClick={close}>Services</NavLink>
-          
-          <div 
+
+          <div
             className="dropdown-wrapper"
-            onMouseEnter={() => setIndustriesOpen(true)}
-            onMouseLeave={() => setIndustriesOpen(false)}
+            onMouseEnter={openIndustries}
+            onMouseLeave={closeIndustriesDelayed}
           >
-            <NavLink 
-              to="/industries" 
+            <NavLink
+              to="/industries"
               onClick={close}
               className="dropdown-trigger"
             >
               Industries
-              <svg 
-                width="12" 
-                height="12" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
-                style={{ 
-                  marginLeft: '4px', 
+                style={{
+                  marginLeft: '4px',
                   transform: industriesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 1s ease'
+                  transition: 'transform 0.3s ease'
                 }}
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </NavLink>
-            
+
             {industriesOpen && (
-              <div className="dropdown-menu">
+              <div
+                className="dropdown-menu"
+                onMouseEnter={openIndustries}
+                onMouseLeave={closeIndustriesDelayed}
+              >
                 {industries.map((industry) => (
                   <Link
                     key={industry.name}
@@ -77,7 +94,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          
+
           <NavLink to="/results" onClick={close}>Results</NavLink>
           <NavLink to="/contact" onClick={close}>Contact</NavLink>
         </nav>

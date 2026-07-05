@@ -2,6 +2,19 @@ import { Link } from 'react-router-dom'
 import { Facebook, Instagram, LinkedIn } from './Icons.jsx'
 
 export default function Footer() {
+  const industries = [
+    { name: 'Plumbers', path: '/industries/plumbers' },
+    { name: 'Electricians', path: '/industries/electricians' },
+    { name: 'Roofers', path: '/industries/roofers' },
+    { name: 'Heating & HVAC', path: '/industries/heating-and-hvac' },
+    { name: 'Drainage companies', path: '/industries/drainage-companies' },
+    { name: 'Landscapers', path: '/industries/landscapers' },
+    { name: 'Builders', path: '/industries/builders' },
+    { name: 'Locksmiths', path: '/industries/locksmiths' },
+    { name: 'Pest control', path: '/industries/pest-control' },
+    { name: 'Cleaning companies', path: '/industries/cleaning-companies' },
+  ]
+
   return (
     <footer>
       <div className="wrap">
@@ -17,19 +30,20 @@ export default function Footer() {
               <a href="#" aria-label="LinkedIn"><LinkedIn /></a>
             </div>
           </div>
+
           <div className="f-col">
-          <h5>SERVICES</h5>
-         <a href="#services">Local SEO</a>
-          <a href="#services">Google Ads Management</a>  {/* NEW */}
-          <a href="#services">Website Design</a>
-          <a href="#services">Reviews & Reputation</a>
-          <a href="#services">Reporting</a>
-            </div>
-          
+            <h5>INDUSTRIES</h5>
+            {industries.map((industry) => (
+              <Link key={industry.name} to={industry.path}>
+                {industry.name}
+              </Link>
+            ))}
+          </div>
+
           <div className="f-col">
             <h5>Company</h5>
             <Link to="/about">About Us</Link>
-            <Link to="/industries">Industries</Link>
+            <Link to="/services">Services</Link>
             <Link to="/results">Results</Link>
             {/* Insights link hidden */}
             <Link to="/contact">Contact</Link>
@@ -38,7 +52,7 @@ export default function Footer() {
             <h5>Contact</h5>
             <a href="tel:+447544058348">+44 75440 58348</a>
             <a href="mailto:support@epicagency.co.uk"> support@epicagency.co.uk</a>
-          
+
             <Link to="/contact">Free Visibility Audit</Link>
           </div>
         </div>
@@ -48,5 +62,4 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
-}
+  )}

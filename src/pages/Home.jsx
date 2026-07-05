@@ -85,9 +85,31 @@ const reviews = [
 ]
 
 const plans = [
-  { name: 'Local Search Foundation™', subLabel: 'Doing less than £10k', desc: 'Build a stronger online presence before investing in more marketing. Perfect for businesses that want to improve their visibility, reputation and local search performance.', price: <><span className="from">Starting at</span>$<span>—</span><small>/mo</small></>, feats: ['Google Business Profile optimization', 'Local SEO & citations', 'Baseline AI-visibility setup', 'Review engine & monthly report'], cta: <a href="#contact" className="btn btn-line">Get Started</a> },
-  { name: 'Local Growth System™', subLabel: '£10k - £50k', feat: true, desc: 'Our most popular solution. Everything needed to consistently generate and manage more enquiries from Google.', price: <><span className="from">Starting at</span>$<span>—</span><small>/mo</small></>, feats: ['Everything in Launch', 'Full GEO / AI-visibility program', 'Answer-ready content & schema', 'Conversion website pages', 'Call tracking & monthly strategy calls'], cta: <a href="https://calendly.com/maaz-epicagencyllc/15min?month=2026-06" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Book a Demo</a> },
-  { name: 'Market Domination™', subLabel: '£50k+', desc: 'Built for ambitious businesses with multiple locations, larger teams or aggressive growth goals. Scale faster with advanced automation, AI, multi-location SEO, paid advertising and strategic growth planning. Will help you in becoming a 6 figure business.', price: <><span className="from">Custom</span>Let's talk</>, feats: ['Everything in Growth', 'Multi-location & service-area scale', 'Paid ads (Google & Meta)', 'Dedicated strategist & priority support'], cta: <a href="#contact" className="btn btn-line">Contact Sales</a> },
+  {
+    name: 'Local Search Foundation™',
+    subLabel: 'Doing less than £10k',
+    desc: 'Build a stronger online presence before investing in more marketing. Perfect for businesses that want to improve their visibility, reputation and local search performance.',
+    price: <><span className="from">Starting at</span>£<span>497</span><small>/mo</small></>,
+    feats: ['Google Business Profile optimization', 'Local SEO & citations', 'Baseline AI-visibility setup', 'Review engine & monthly report'],
+    cta: <a href="#contact" className="btn btn-line">Get Started</a>
+  },
+  {
+    name: 'Local Growth System™',
+    subLabel: '£10k - £50k',
+    feat: true,
+    desc: 'Our most popular solution. Everything needed to consistently generate and manage more enquiries from Google.',
+    price: <><span className="from">Starting at</span>£<span>997</span><small>/mo</small></>,
+    feats: ['Everything in Launch', 'Full GEO / AI-visibility program', 'Answer-ready content & schema', 'Conversion website pages', 'Call tracking & monthly strategy calls'],
+    cta: <a href="https://calendly.com/maaz-epicagencyllc/15min?month=2026-06" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Book a Demo</a>
+  },
+  {
+    name: 'Market Domination™',
+    subLabel: '£50k+',
+    desc: 'Built for ambitious businesses with multiple locations, larger teams or aggressive growth goals. Scale faster with advanced automation, AI, multi-location SEO, paid advertising and strategic growth planning. Will help you in becoming a 6 figure business.',
+    price: <><span className="from">Starting at</span>£<span>2,997</span><small>/mo</small></>,
+    feats: ['Everything in Growth', 'Multi-location & service-area scale', 'Paid ads (Google & Meta)', 'Dedicated strategist & priority support'],
+    cta: <a href="#contact" className="btn btn-line">Contact Sales</a>
+  },
 ]
 
 const faqItems = [
@@ -97,6 +119,14 @@ const faqItems = [
   { q: 'Do I need to sign a long contract?', a: "No. We earn the relationship month to month and back it with our 90-day guarantee. If we don't hit the visibility target, your next month is on us." },
   { q: 'What kinds of businesses do you work with?', a: 'Local and service-based businesses where customers search before they buy — home services, healthcare, legal, real estate, restaurants, retail and specialty trades. If buyers compare options online, we can help.' },
   { q: 'How do you report on results?', a: 'You get a live dashboard plus a monthly report covering rankings, AI mentions, calls and tracked revenue — and a strategy call to review what\'s working and what\'s next. No vanity metrics.' },
+]
+
+const trustLogos = [
+  { name: 'Client 1', src: '/images/a.jpeg' },
+  { name: 'Client 2', src: '/images/b.jpeg' },
+  { name: 'Client 3', src: '/images/c.jpeg' },
+  { name: 'Client 4', src: '/images/d.jpeg' },
+  { name: 'Client 5', src: '/images/f.jpeg' },
 ]
 
 export default function Home() {
@@ -159,7 +189,9 @@ export default function Home() {
         <div className="trust">
           <div className="wrap">
             <span className="tl">Trusted by local businesses</span>
-            <span className="logo-ph2">LOGO</span><span className="logo-ph2">LOGO</span><span className="logo-ph2">LOGO</span><span className="logo-ph2">LOGO</span><span className="logo-ph2">LOGO</span>
+            {trustLogos.map((l) => (
+              <img className="logo-ph2" key={l.name} src={l.src} alt={l.name} />
+            ))}
           </div>
         </div>
       </section>
