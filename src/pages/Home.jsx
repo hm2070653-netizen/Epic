@@ -122,11 +122,11 @@ const faqItems = [
 ]
 
 const trustLogos = [
-  { name: 'Client 1', src: '/images/a.jpeg' },
-  { name: 'Client 2', src: '/images/b.jpeg' },
-  { name: 'Client 3', src: '/images/c.jpeg' },
-  { name: 'Client 4', src: '/images/d.jpeg' },
-  { name: 'Client 5', src: '/images/f.jpeg' },
+  { name: 'Client 1', src: '/images/1.png' },
+  { name: 'Client 2', src: '/images/2.png' },
+  { name: 'Client 3', src: '/images/3.png' },
+  { name: 'Client 4', src: '/images/4.png' },
+  { name: 'Client 5', src: '/images/5.png' },
 ]
 
 export default function Home() {
@@ -224,11 +224,11 @@ export default function Home() {
             <h2>We don't measure clicks.<br />We measure booked jobs.</h2>
           </div>
           <div className="stats">
-            <div className="stat reveal"><div className="num" style={{ color: "var(--orange)" }}>+50%</div><div className="lab">Local visibility in 90 days — guaranteed</div></div>
-            <div className="stat reveal"><div className="num">20–50</div><div className="lab">New Google reviews generated per month</div></div>
-            <div className="stat reveal"><div className="num">&lt;2 min</div><div className="lab">Average lead response time with AI follow-up</div></div>
-            <div className="stat reveal"><div className="num">Page 1</div><div className="lab">Google Maps ranking for your main trade keywords</div></div>
-            <div className="stat reveal"><div className="num" style={{ color: "var(--orange)" }}>3×</div><div className="lab">Typical return on investment within 60-90 days</div></div>
+            <div className="stat reveal"><div className="num" style={{ color: "var(--orange)", fontWeight: 700, fontSize: "clamp(22px, 2.6vw, 36px)" }}>+50%</div><div className="lab">Local visibility in 90 days — guaranteed</div></div>
+            <div className="stat reveal"><div className="num" style={{ fontWeight: 700, fontSize: "clamp(22px, 2.6vw, 36px)" }}>20–50</div><div className="lab">New Google reviews generated per month</div></div>
+            <div className="stat reveal"><div className="num" style={{ fontWeight: 700, fontSize: "clamp(22px, 2.6vw, 36px)" }}>&lt;2 min</div><div className="lab">Average lead response time with AI follow-up</div></div>
+            <div className="stat reveal"><div className="num" style={{ fontWeight: 700, fontSize: "clamp(22px, 2.6vw, 36px)" }}>Page 1</div><div className="lab">Google Maps ranking for your main trade keywords</div></div>
+            <div className="stat reveal"><div className="num" style={{ color: "var(--orange)", fontWeight: 700, fontSize: "clamp(22px, 2.6vw, 36px)" }}>3×</div><div className="lab">Typical return on investment within 60-90 days</div></div>
           </div>
         </div>
       </section>
