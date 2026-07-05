@@ -1198,38 +1198,4 @@ footer .wrap { padding: 0 24px }
     display: block;
   }
 }
-.trust .logo-ph2 {
-  height: 72px;
-  min-width: 90px;
-  max-width: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 3px;      
-  background: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-  box-shadow: 0 6px 16px -6px rgba(0,0,0,.3);
-}
 
-.trust .logo-ph2 img {
-  height: 80px;          
-  width: auto;
-  max-width: 124px;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .trust .logo-ph2 {
-    height: 60px;
-    min-width: 80px;
-    max-width: 110px;
-    padding: 2px 4px;
-  }
-  .trust .logo-ph2 img {
-    height: 55px;
-    max-width: 96px;
-  }
-}

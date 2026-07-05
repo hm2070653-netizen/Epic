@@ -122,11 +122,11 @@ const faqItems = [
 ]
 
 const trustLogos = [
-  { name: 'Client 1', src: '/images/1.png' },
-  { name: 'Client 2', src: '/images/2.png' },
-  { name: 'Client 3', src: '/images/3.png' },
-  { name: 'Client 4', src: '/images/4.png' },
-  { name: 'Client 5', src: '/images/5.png' },
+  { name: 'Client 1', src: '/images/a.jpeg' },
+  { name: 'Client 2', src: '/images/b.jpeg' },
+  { name: 'Client 3', src: '/images/c.jpeg' },
+  { name: 'Client 4', src: '/images/d.jpeg' },
+  { name: 'Client 5', src: '/images/f.jpeg' },
 ]
 
 export default function Home() {
@@ -190,7 +190,13 @@ export default function Home() {
           <div className="wrap">
             <span className="tl">Trusted by local businesses</span>
             {trustLogos.map((l) => (
-              <img className="logo-ph2" key={l.name} src={l.src} alt={l.name} />
+              <img
+                className="logo-ph2"
+                key={l.name}
+                src={l.src}
+                alt={l.name}
+                style={{ height: '52px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }}
+              />
             ))}
           </div>
         </div>
